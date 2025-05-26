@@ -1,0 +1,10 @@
+graph TD
+    A[User Uploads Document] --> B[FastAPI Upload Endpoint]
+    B --> C[OCR Module - DocTR or TrOCR]
+    C --> D[Extracted Text]
+    D --> E[Field Extraction and Classification]
+    E --> F[Vector Embedding with PgVector]
+    F --> G[Similarity Search and Duplicate Detection]
+    E --> H[Save Fields to Supabase DB]
+    B --> I[Upload Original File to Supabase Storage]
+    G --> J[Optional Fraud and Vendor Graph - Neo4j]
